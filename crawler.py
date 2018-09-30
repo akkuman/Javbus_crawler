@@ -14,6 +14,8 @@ def get_dict(url):
         try:
             detail_page_html = downloader.get_html(detail_url)
             dict_jav = pageparser.parser_content(detail_page_html)
+            #重写url
+            dict_jav['URL'] = detail_url
         except:
             with open('fail_url.txt', 'a') as fd:
                 fd.write('%s\n' % detail_url)
@@ -26,13 +28,14 @@ def join_db(url,is_uncensored):
     """the detail_dict of the url join the db"""
 
     for dict_jav_data, detail_url in get_dict(url):
-        if controler.check_url_not_in_table(url):
+        if controler.check_url_not_in_table(detail_url):
+            # print("%s is going to be written" % dict_jav_data['URL'])
             controler.write_data(dict_jav_data, is_uncensored)
             print("Crawled %s" % detail_url)
         else:
-            print("it has updated over...window will be closed after 60s")
-            time.sleep(60)
-            exit()
+            print("%s is done" % detail_url)
+            # time.sleep(60)
+            # exit()
 
 
 
@@ -55,5 +58,5 @@ def main(entrance):
 
 
 if __name__ == '__main__':
-    main('https://www.javbus5.com')
-    main('https://www.javbus5.com/uncensored')
+    main('https://www.javbus.com/search/-')
+    main('https://www.javbus.com/uncensored/search/-')

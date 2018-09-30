@@ -7,7 +7,7 @@ import downloader
 def _get_cili_url(soup):
     """get_cili(soup).get the ajax url and Referer url of request"""
 
-    ajax_get_cili_url = 'https://www.javbus5.com/ajax/uncledatoolsbyajax.php?lang=zh'
+    ajax_get_cili_url = 'https://www.javbus.com/ajax/uncledatoolsbyajax.php?lang=zh'
     ajax_data = soup.select('script')[8].text
     for l in ajax_data.split(';')[:-1]:
         ajax_get_cili_url += '&%s' % l[7:].replace("'","").replace(' ','')
@@ -26,13 +26,14 @@ def _parser_magnet(html):
 
 def get_next_page_url(entrance, html):
     """get_next_page_url(entrance, html),return the url of next page if exist"""
-    print("done the page.......")
+    
     soup = BeautifulSoup(html, "html.parser")
     next_page = soup.select('a[id="next"]')
     if next_page:
-        next_page_link = next_page[0]['href'].split('/')[-2:]
+        next_page_link = next_page[0]['href'].split('/')[-1:]
         next_page_link = '/'+'/'.join(next_page_link)
         next_page_url = entrance + next_page_link
+        print("Next page is %s " % next_page_url)
         return next_page_url
     return None
 
