@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 
-import sqlite3
 import pymysql.cursors
 import re
 
@@ -15,41 +14,51 @@ connection = pymysql.connect(host='47.254.83.13',
 
 
 def write_data(dict_jav, censored):
-
-    # dict_jav['URL'], 
-    # dict_jav['識別碼'], 
-    # dict_jav['發行日期'], 
-    # dict_jav['長度'], 
-    # dict_jav['導演'], 
-    # dict_jav['製作商'], 
-    # dict_jav['發行商'], 
-    # dict_jav['系列'], 
-    # dict_jav['演員'], 
-    # dict_jav['類別'], 
-    # dict_jav['磁力链接']
-    # censored
     
+    # Video
     with connection.cursor() as cursor:
-        # Create a new record
-        sql_video = "INSERT INTO `Video` (`Video_ID`, `URL`, `Release_Date`, `Idol`, `Length`, `Studio`, `Producer`, `Lable`, `Censored`) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sql_video, (dict_jav['識別碼'], dict_jav['URL'], dict_jav['發行日期'],dict_jav['演員'], dict_jav['長度'], dict_jav['製作商'], dict_jav['發行商'], dict_jav['類別'], int(censored)))
-
+        sql_video = "INSERT INTO `Video` (`Video_ID`, `URL`, `Release_Date`, `Length`, `Producer`, `Series`, `Label`, `Censored`) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql_video, (dict_jav['Video_ID'], dict_jav['URL'], dict_jav['Release_Date'], dict_jav['Length'], dict_jav['Producer'], dict_jav['Series'], dict_jav['Label'], int(censored)))
     
+    # Magnet
     with connection.cursor() as cursor:
-        for magnet in dict_jav['磁力链接']:
+        for magnet in dict_jav['Magnet']:
             try:
-                sql_magnet = "INSERT INTO `Magnet` (`Magnet`, `Video_ID`, `File_Size`, `Share_Date`, `Magnet_Name`) VALUES (%s,%s,%s,%s,%s)"
-                cursor.execute(sql_magnet, (magnet['Magnet'], dict_jav['識別碼'], magnet['File_Size'], magnet['Share_Date'], magnet['Magnet_Name'] ))
-                # print(magnet)
-            except:
-                with open('fail_url.txt', 'a') as fd:
-                    fd.write('%s\n' % magnet['Magnet'])
-                print("Fail to write %s" % magnet['Magnet'])
+                sql_magnet = "INSERT INTO `Magnet` (`Hash`, `Magnet`, `Video_ID`, `File_Size`, `Share_Date`, `Magnet_Name`, `Source`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+                cursor.execute(sql_magnet, (get_hash(magnet['Magnet']), magnet['Magnet'], dict_jav['Video_ID'], magnet['File_Size'], magnet['Share_Date'], magnet['Magnet_Name'], 'Javbus'))
+            except Exception as e:
+                print(e)
+                print("Failed Magnet %s" % magnet['Magnet'])
+                with open('fail.txt', 'a') as fd:
+                    fd.write('%s\n' % e)
+                    fd.write('%s\n' % dict_jav['Video_ID'])
+                    fd.write('%s\n\n\n' % magnet['Magnet'])
                 continue
-    
+
+    # Actor
+    with connection.cursor() as cursor:
+        for actor in dict_jav['Actors']:
+            try:
+                sql_actor = "INSERT INTO `Actor` (`Name`) SELECT %s WHERE NOT EXISTS (SELECT `Name` FROM `Actor` WHERE `Name` = %s);"
+                sql_video_actor = "INSERT INTO `Video_Actor`(`Video_ID`, `Actor`) VALUES(%s, %s)"
+                cursor.execute(sql_actor, (actor, actor))
+                cursor.execute(sql_video_actor, (dict_jav['Video_ID'], actor))
+
+            except Exception as e:
+                print(e)
+                print("Failed Actor %s Video %s" % (actor, dict_jav['Video_ID']))
+                with open('fail.txt', 'a') as fd:
+                    fd.write('%s\n' % e)
+                    fd.write('%s\n' % actor)
+                    fd.write('%s\n\n\n' % dict_jav['Video_ID'])
+                continue
 
     connection.commit()
 
+def get_hash(magnet):
+    regex = r"[a-fA-F\d]{40}"
+    torrent_hash = re.search(regex, magnet)
+    return torrent_hash.group()
 
 def check_url_not_in_table(url):
     with connection.cursor() as cursor:

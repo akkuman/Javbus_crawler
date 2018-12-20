@@ -38,8 +38,12 @@ def _resize_link_length(magnet_link):
         
     return magnet_link.split("&dn")[0]
 
-# def _get_hash():
-    
+def _parser_actor(actors):
+    data = list()
+    actors = (i.text.strip() for i in actors) if actors else ''
+    for actor in actors:
+        data.append(actor) 
+    return data
 
 
 def _parser_magnet(html):
@@ -89,66 +93,52 @@ def parser_content(html):
     soup = BeautifulSoup(html, "html.parser")
 
     categories = {}
-
+    
     code_name_doc = soup.find('span', text="識別碼:")
     code_name = code_name_doc.parent.contents[2].text if code_name_doc else ''
-    categories['識別碼'] = code_name
-    #code_name = soup.find('span', text="識別碼:").parent.contents[2].text if soup.find('span', text="識別碼:") else ''
+    categories['Video_ID'] = code_name
 
     date_issue_doc = soup.find('span', text="發行日期:")
     date_issue = date_issue_doc.parent.contents[1].strip() if date_issue_doc else ''
-    categories['發行日期'] = date_issue
-    #date_issue = soup.find('span', text="發行日期:").parent.contents[1].strip() if soup.find('span', text="發行日期:") else ''
+    categories['Release_Date'] = date_issue
 
     duration_doc = soup.find('span', text="長度:")
     duration = duration_doc.parent.contents[1].strip() if duration_doc else ''
-    categories['長度'] = re.match(r"\d+", duration)[0]
-    #duration = soup.find('span', text="長度:").parent.contents[1].strip() if soup.find('span', text="長度:") else ''
-
-    director_doc = soup.find('span', text="導演:")
-    director = director_doc.parent.contents[2].text if director_doc else ''
-    categories['導演'] = director
-    #director = soup.find('span', text="導演:").parent.contents[2].text if soup.find('span', text="導演:") else ''
+    categories['Length'] = re.match(r"\d+", duration)[0]
 
     manufacturer_doc = soup.find('span', text="製作商:")
     manufacturer = manufacturer_doc.parent.contents[2].text if manufacturer_doc else ''
-    categories['製作商'] = manufacturer
-    #manufacturer = soup.find('span', text="製作商:").parent.contents[2].text if soup.find('span', text="製作商:") else ''
-
-    publisher_doc = soup.find('span', text="發行商:")
-    publisher = publisher_doc.parent.contents[2].text if publisher_doc else ''
-    categories['發行商'] = publisher
-    #publisher = soup.find('span', text="發行商:").parent.contents[2].text if soup.find('span', text="發行商:") else ''
+    categories['Producer'] = manufacturer
 
     series_doc = soup.find('span', text="系列:")
     series = series_doc.parent.contents[2].text if series_doc else ''
-    categories['系列'] = series
-    #series = soup.find('span', text="系列:").parent.contents[2].text if soup.find('span', text="系列:") else ''
+    categories['Series'] = series
 
     genre_doc = soup.find('p', text="類別:")
     genre =(i.text.strip() for i in genre_doc.find_next('p').select('span')) if genre_doc else ''
-    #genre =(i.text.strip() for i in soup.find('p', text="類別:").find_next('p').select('span')) if soup.find('p', text="類別:") else ''
     genre_text = ''
     for tex in genre:
         genre_text += '%s   ' % tex 
-    categories['類別'] = genre_text
+    categories['Label'] = genre_text
 
-    actor_doc = soup.select('span[onmouseover^="hoverdiv"]')
-    actor = (i.text.strip() for i in actor_doc) if actor_doc else ''
-    # actor = (i.text.strip() for i in soup.select('span[onmouseover^="hoverdiv"]')) if soup.select('span[onmouseover^="hoverdiv"]') else ''
-    actor_text = ''
-    for tex in actor:
-        actor_text += '%s   ' % tex 
-    categories['演員'] = actor_text
-    
-    #网址加入字典
+    actors = soup.select('span[onmouseover^="hoverdiv"]')
+    list_actor = _parser_actor(actors)
+    categories['Actors'] = list_actor
+
     url = soup.select('link[hreflang="zh"]')[0]['href']
     categories['URL'] = url
 
-    #将磁力链接加入字典
     magnet_html = downloader.get_html(_get_cili_url(soup), Referer_url=url)
     magnet = _parser_magnet(magnet_html)
-    categories['磁力链接'] = magnet
+    categories['Magnet'] = magnet
+
+    # publisher_doc = soup.find('span', text="發行商:")
+    # publisher = publisher_doc.parent.contents[2].text if publisher_doc else ''
+    # categories['發行商'] = publisher
+
+    # director_doc = soup.find('span', text="導演:")
+    # director = director_doc.parent.contents[2].text if director_doc else ''
+    # categories['導演'] = director
 
     return categories
 
