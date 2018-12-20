@@ -3,6 +3,7 @@
 
 from bs4 import BeautifulSoup
 import downloader
+import re
 
 def _get_cili_url(soup):
     """get_cili(soup).get the ajax url and Referer url of request"""
@@ -14,15 +15,51 @@ def _get_cili_url(soup):
     return ajax_get_cili_url
 
 
-def _parser_magnet(html):
-    """parser_magnet(html),get all magnets from a html and return the str of magnet"""
+def _get_size_in_MB(size_with_units):
 
-    #存放磁力的字符串
-    magnet = ''
+    if 'GB' in size_with_units:
+        size = int(float(size_with_units.replace('GB','')) * 1024)
+    elif 'MB' in size_with_units:
+        size = float(size_with_units.replace('MB',''))
+    else:
+        try:
+            size = float(size_with_units)
+            if size < 50:
+                size = size * 1024
+        except:
+            size = 0;
+    return int(size)
+
+
+def _resize_link_length(magnet_link):
+
+    if len(magnet_link) < 255:
+        return magnet_link
+        
+    return magnet_link.split("&dn")[0]
+
+# def _get_hash():
+    
+
+
+def _parser_magnet(html):
+
     soup = BeautifulSoup(html,"html.parser")
+    data = list()
+
+    magnet = {} # A dictionary
+
     for td in soup.select('td[width="70%"]'):
-        magnet += td.a['href'] + '\n'
-    return magnet
+        # td.contents是它自己含的东西，再来一个.contents才是下一级的a
+        # contents 偶数位置好像是navigator
+        temp = magnet.copy()
+        temp['Magnet_Name'] = td.contents[1].contents[0].strip() 
+        temp['Magnet'] = _resize_link_length(td.a['href'])
+        temp['File_Size'] = _get_size_in_MB(td.parent.contents[3].text.strip())
+        temp['Share_Date'] = td.parent.contents[5].text.strip()
+
+        data.append(temp)
+    return data
 
 def get_next_page_url(entrance, html):
     """get_next_page_url(entrance, html),return the url of next page if exist"""
@@ -65,7 +102,7 @@ def parser_content(html):
 
     duration_doc = soup.find('span', text="長度:")
     duration = duration_doc.parent.contents[1].strip() if duration_doc else ''
-    categories['長度'] = duration
+    categories['長度'] = re.match(r"\d+", duration)[0]
     #duration = soup.find('span', text="長度:").parent.contents[1].strip() if soup.find('span', text="長度:") else ''
 
     director_doc = soup.find('span', text="導演:")
@@ -98,7 +135,7 @@ def parser_content(html):
 
     actor_doc = soup.select('span[onmouseover^="hoverdiv"]')
     actor = (i.text.strip() for i in actor_doc) if actor_doc else ''
-    #actor = (i.text.strip() for i in soup.select('span[onmouseover^="hoverdiv"]')) if soup.select('span[onmouseover^="hoverdiv"]') else ''
+    # actor = (i.text.strip() for i in soup.select('span[onmouseover^="hoverdiv"]')) if soup.select('span[onmouseover^="hoverdiv"]') else ''
     actor_text = ''
     for tex in actor:
         actor_text += '%s   ' % tex 
