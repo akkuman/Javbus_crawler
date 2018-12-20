@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import downloader
 import re
 
-def _get_cili_url(soup):
+def get_cili_url(soup):
     """get_cili(soup).get the ajax url and Referer url of request"""
 
     ajax_get_cili_url = 'https://www.javbus.com/ajax/uncledatoolsbyajax.php?lang=zh'
@@ -15,7 +15,7 @@ def _get_cili_url(soup):
     return ajax_get_cili_url
 
 
-def _get_size_in_MB(size_with_units):
+def get_size_in_MB(size_with_units):
 
     if 'GB' in size_with_units:
         size = int(float(size_with_units.replace('GB','')) * 1024)
@@ -31,14 +31,14 @@ def _get_size_in_MB(size_with_units):
     return int(size)
 
 
-def _resize_link_length(magnet_link):
+def resize_link_length(magnet_link):
 
     if len(magnet_link) < 255:
         return magnet_link
         
     return magnet_link.split("&dn")[0]
 
-def _parser_actor(actors):
+def parser_actor(actors):
     data = list()
     actors = (i.text.strip() for i in actors) if actors else ''
     for actor in actors:
@@ -46,7 +46,7 @@ def _parser_actor(actors):
     return data
 
 
-def _parser_magnet(html):
+def parser_magnet(html):
 
     soup = BeautifulSoup(html,"html.parser")
     data = list()
@@ -58,8 +58,8 @@ def _parser_magnet(html):
         # contents 偶数位置好像是navigator
         temp = magnet.copy()
         temp['Magnet_Name'] = td.contents[1].contents[0].strip() 
-        temp['Magnet'] = _resize_link_length(td.a['href'])
-        temp['File_Size'] = _get_size_in_MB(td.parent.contents[3].text.strip())
+        temp['Magnet'] = resize_link_length(td.a['href'])
+        temp['File_Size'] = get_size_in_MB(td.parent.contents[3].text.strip())
         temp['Share_Date'] = td.parent.contents[5].text.strip()
 
         data.append(temp)
@@ -122,14 +122,14 @@ def parser_content(html):
     categories['Label'] = genre_text
 
     actors = soup.select('span[onmouseover^="hoverdiv"]')
-    list_actor = _parser_actor(actors)
+    list_actor = parser_actor(actors)
     categories['Actors'] = list_actor
 
     url = soup.select('link[hreflang="zh"]')[0]['href']
     categories['URL'] = url
 
-    magnet_html = downloader.get_html(_get_cili_url(soup), Referer_url=url)
-    magnet = _parser_magnet(magnet_html)
+    magnet_html = downloader.get_html(get_cili_url(soup), Referer_url=url)
+    magnet = parser_magnet(magnet_html)
     categories['Magnet'] = magnet
 
     # publisher_doc = soup.find('span', text="發行商:")

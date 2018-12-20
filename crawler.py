@@ -11,17 +11,11 @@ def get_dict(url):
 
     url_html = downloader.get_html(url)
     for detail_url in pageparser.parser_homeurl(url_html):
-        # try:
-            detail_page_html = downloader.get_html(detail_url)
-            dict_jav = pageparser.parser_content(detail_page_html)
-            #重写url
-            dict_jav['URL'] = detail_url
-        # except:
-        #     with open('fail_url.txt', 'a') as fd:
-        #         fd.write('%s\n' % detail_url)
-        #     print("Fail to crawl %s\ncrawl next detail page......" % detail_url)
-        #     continue
-            yield dict_jav, detail_url
+        detail_page_html = downloader.get_html(detail_url)
+        dict_jav = pageparser.parser_content(detail_page_html)
+        #重写url
+        dict_jav['URL'] = detail_url
+        yield dict_jav, detail_url
 
 
 def join_db(url,is_censored):
@@ -34,7 +28,8 @@ def join_db(url,is_censored):
             controler.write_data(dict_jav_data, is_censored)
             print("Crawled %s" % detail_url)
         else:
-            print("%s is done" % detail_url)
+            controler.write_data(dict_jav_data, is_censored)
+            print("Updated %s " % detail_url)
             # time.sleep(60)
             # exit()
 
