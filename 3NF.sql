@@ -31,5 +31,5 @@ CREATE TABLE IF NOT EXISTS `javbus`.`Video` (
 
 CREATE TABLE IF NOT EXISTS `javbus`.`Video_Actor` ( 
     `Video_ID` VARCHAR(20) NOT NULL, 
-    `Actor` VARCHAR(20) NOT NULL, 
+    `Actor` VARCHAR(80) NOT NULL, 
     PRIMARY KEY (`Video_ID`,`Actor`)) ENGINE = InnoDB;
