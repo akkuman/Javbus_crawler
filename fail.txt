@@ -1,0 +1,500 @@
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-002-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GOD-076-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+RED-070
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+2178
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-016
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-019
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-012
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-022
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-016
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-019
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-012
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-022
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DGS-018
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MDP-105
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MDP-105
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+RED-079
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SBNR-054
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+D-476
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+AEDVD-1397R
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+AEDVD-1397R
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TOP-006-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCK-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCK-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MSRANK-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MSRANK-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+PMPD-013
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCPB-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCPB-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WMP-006
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WSV-017
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SPZ-042
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+HRDV-640
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SPZ-053
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TTA-198
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+PASD-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MDL-102
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SEA-304
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SEA-308
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SEA-318
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+BBDS-007
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GOD-129-2
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SEA-311
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SEA-322
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-010
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IG-097
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MILV-053
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MDL-034-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+SBD-031-2
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+IA-005
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-4000070
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WSD-003-2
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VF-073
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VF-071
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VF-067
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GA-027D
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VF-064
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+LVSD-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-006-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-4000085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3900085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3800085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3700085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+2178
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VS-715
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-006-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+ZIPANG-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+YURIE-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCON-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TTA-204
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+2178
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+AEDVD-1397R
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+AEDVD-1397R
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCK-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCK-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MSRANK-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+MSRANK-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCPB-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCPB-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TTA-198
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+LVSD-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-4000085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3900085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3800085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3700085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+ZIPANG-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+YURIE-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCON-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TTA-204
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+2178
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+LVSD-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-4000085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3900085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3800085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+CAV-3700085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+WFFD-003
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+ZIPANG-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+YURIE-001
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+DCON-002
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+VIPR-085
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+X-1025
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+TTA-204
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+GKD-004-1
+
+
+(1292, "Incorrect date value: '0000-00-00' for column 'Release_Date' at row 1")
+2178
+
+
